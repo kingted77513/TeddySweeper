@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="game.Referee" x="167" y="263">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="game.Referee_Board"
+            endpointName="map" kind="Simple"/>
+        <Communication destinationClassName="game.Referee_Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="game.Referee_Board" x="294" y="321">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="game.Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="ai.CSP" x="394" y="70">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ai.AI"/>
+        <Communication destinationClassName="ai.SinglePoint"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="game.Player_Board" x="331" y="170">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="game.Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="game.Board" x="328" y="236">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="ai.AI" x="274" y="85">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="game.Player_Board"
+            endpointName="map" kind="Simple"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="game.Player" x="166" y="145">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="ai.AI" endpointName="sp" kind="Simple"/>
+        <Association destinationClassName="game.Player_Board"
+            endpointName="playerMap" kind="Simple"/>
+        <Communication destinationClassName="game.Referee"/>
+        <Communication destinationClassName="ai.SinglePoint"/>
+        <Communication destinationClassName="game.UI"/>
+        <Communication destinationClassName="ai.CSP"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="ai.TeddyMethod"/>
+    </Class>
+    <Class name="main.GUI" x="32" y="202">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="game.UI" endpointName="ui" kind="Simple"/>
+        <Communication destinationClassName="game.UI"/>
+    </Class>
+    <Class name="ai.SinglePoint" x="388" y="11">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ai.AI"/>
+        <Communication destinationClassName="ai.AI"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="game.UI" x="98" y="202">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="game.Player"
+            endpointName="player" kind="Simple"/>
+        <Association destinationClassName="game.Referee"
+            endpointName="referee" kind="Simple"/>
+        <Communication destinationClassName="game.Referee_Board"/>
+        <Communication destinationClassName="game.Referee"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="game.Player"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+    <Class name="ai.TeddyMethod" x="390" y="125">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="ai.AI"/>
+        <Communication destinationClassName="ai.AI"/>
+        <Communication destinationClassName="game.UI"/>
+        <Communication destinationClassName="game.Player_Board"/>
+        <Communication destinationClassName="game.Board"/>
+    </Class>
+</ClassDiagram>
